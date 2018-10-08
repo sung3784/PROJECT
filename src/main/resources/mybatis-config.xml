@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.my.cleaner.vo.Customer" alias="Customer" />
+		<typeAlias type="com.my.cleaner.vo.Cleaner" alias="Cleaner"/>
+		<typeAlias type="com.my.cleaner.vo.wantedCustomer" alias="wantedCustomer"/>
+	</typeAliases>
+
+	<mappers>
+		<mapper resource="customerMapper.xml" />
+		<mapper resource="cleanerMapper.xml" />
+		<mapper resource="wantedCustomerMapper.xml" />
+		
+	</mappers>
+</configuration>

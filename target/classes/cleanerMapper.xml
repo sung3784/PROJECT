@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.my.cleaner.dao.cleanerMapper">
+	<insert id="insertCleaner" parameterType="Cleaner">
+	insert into cleaner values(
+	cleanerseq.nextval,
+	#{name},
+	#{phone},
+	#{id},
+	#{password},
+	#{address},
+	#{address2}
+	
+	)
+	</insert>
+	
+	<select id="selectOneCleaner" parameterType="Cleaner" resultType="Cleaner">
+	select * from cleaner where id=#{id} and password=#{password}
+	</select>
+	
+
+</mapper>

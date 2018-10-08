@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.my.cleaner.dao.wantedCustomerMapper">
+	<insert id="insertWantedCustomer" parameterType="wantedCustomer">
+	insert into wantedcustomer values(
+	seqwc.nextval,
+	#{clientNumber},
+	#{name},
+	#{phone},
+	#{address},
+	#{address2},
+	#{wantedTime},
+	#{specificTime},
+	#{details}
+	)
+	</insert>
+	
+	<select id="selectAllWC" resultType="wantedCustomer">
+	select * from wantedcustomer
+	
+	</select>
+	
+	<select id="selectOneWC" parameterType="int" resultType="wantedCustomer">
+	select * from wantedcustomer where customernumber=#{value}
+	
+	</select>
+	
+	<delete id="deleteWantedCustomer" parameterType="int">
+	delete from wantedcustomer where seqwc=#{value}
+	
+	</delete>
+	
+	<!-- 전체 글 개수(검색 필터링 후) -->
+	<select id="getTotal" parameterType="String"  resultType="int">
+		select count(*) from
+	wantedcustomer
+	<if test="_parameter !=null">
+	where address like '%' || #{value} || '%' 
+	</if>
+	order by wantedtime asc
+	
+	</select>  
+	
+	<select id="SelectAllwcwc" parameterType="String" resultType="wantedCustomer">
+	select * from
+	wantedcustomer
+	<if test="_parameter !=null">
+	where address like '%' || #{value} || '%' 
+	</if>
+	order by wantedtime asc
+	
+	</select>  
+	
+	<select id="SelectAllforMap" parameterType="String" resultType="wantedCustomer">
+	select * from
+	wantedcustomer
+	<if test="_parameter !=null">
+	where address like '%' || #{value} || '%' 
+	</if>
+	order by wantedtime asc
+	
+	
+	</select>
+	
+	<select id="boardDetail" parameterType="int" resultType="wantedCustomer">
+	select * from wantedcustomer
+	where seqwc=#{value}
+	
+	</select>
+	
+
+</mapper>

@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+div {
+	
+}
+
+.box1 {
+	width: 50%;
+	float: left;
+}
+
+.box2 {
+	width: 50%;
+	float: right;
+}
+
+td {
+	font-size: 20px;
+	width: 100px;
+}
+
+input {
+	font-size: 20px;
+}
